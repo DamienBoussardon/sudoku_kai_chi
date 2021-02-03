@@ -17,9 +17,20 @@
 					<a class="nav-link" href="{{ path('ranking')}}">Classement</a>
 				{% endif %}
 			</div>
-			<div>
+			<div class="mr-5" >
 				{% if app.user %}
-					<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>	
+				<div class="dropdown show">
+					<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Compte
+					</a>
+
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						{% if app.user.roles[0] == "ROLE_Admin" %}
+							<a class="dropdown-item text-dark" href="{{ path('admin') }}">Dashboard</a>	
+						{% endif %}
+						<a class="dropdown-item text-dark" href="{{ path('app_logout') }}">Déconnexion</a>	
+					</div>
+				</div>
 				{% else %}
 					<a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
 				{% endif %}
