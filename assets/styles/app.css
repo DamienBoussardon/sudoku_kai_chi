@@ -78,7 +78,7 @@ body {
 #ranking_page td{
     color: #fff;
 }
-@media screen and (min-width: 768px) and (max-width: 1920px) {
+@media screen and (min-width: 400px) and (max-width: 1920px) {
     #ranking_page{
         height: calc(100vh - 13em);
     }
@@ -337,4 +337,17 @@ form .grid td .form-control {
     #rules_page{
         height: calc(100vh - 13em);
     }
+}
+
+
+
+
+/*ADMIN_PAGE*/
+@media screen  and (max-width: 1920px) {
+    #admin_page{
+        height: calc(100vh - 10em);
+    }
+}
+#sudoku_grid_creator label{
+    display:none;
 }
